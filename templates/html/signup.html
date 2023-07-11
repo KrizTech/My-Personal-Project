@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #319125;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Sign-up form styles */
+        .signup-form {
+            width: 400px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"],
+        .signup-form input[type="tel"],
+        .signup-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-form p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-form p a {
+            color: #d61b1b;
+        }
+
+        /* Company logo styles */
+        .logo {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+
+        .logo img {
+            width: 300px;
+            height: 100px;
+            border-radius: 800%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="messages">
+    {% include '/html/flash_msg.html' %}
+    </div>
+    <header class="header">
+        <h1>Sign Up</h1>
+    </header>
+
+    <div class="signup-form">
+        <div class="logo">
+            <a href="http://127.0.0.1:5000/home">
+                <img src="static/images/learnhub_logo.png" alt="Company Logo">
+            </a>
+        </div>
+
+        <h2>Create an Account</h2>
+
+        <form id="signupForm" action="http://127.0.0.1:5000/signup" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="tel" name="phone_number" placeholder="Phone Number" required>
+            <select name="account_type" required>
+                <option value="">Account Type</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Student">Student</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p class="message">Already have an account? <a href="http://127.00.1:5000/login" class="login-link">Login</a></p>
+    </div>
+</body>
+</html>
